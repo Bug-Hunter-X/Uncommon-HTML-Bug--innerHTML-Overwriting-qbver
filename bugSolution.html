@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+  <script>
+    // Correct way to append using insertAdjacentHTML
+    document.getElementById('myDiv').insertAdjacentHTML('beforeend', '<p>This is a new paragraph.</p>');
+    document.getElementById('myDiv').insertAdjacentHTML('beforeend', '<p>This is another paragraph.</p>');
+
+    //Alternative Correct way to append using appendChild
+    const newParagraph1 = document.createElement('p');
+    newParagraph1.textContent = 'This is a new paragraph using appendChild.';
+    document.getElementById('myDiv').appendChild(newParagraph1);
+
+    const newParagraph2 = document.createElement('p');
+    newParagraph2.textContent = 'This is another paragraph using appendChild.';
+    document.getElementById('myDiv').appendChild(newParagraph2);
+  </script>
+</body>
+</html>
