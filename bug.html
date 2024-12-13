@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+  <script>
+    // Incorrectly using innerHTML to append an element
+    document.getElementById('myDiv').innerHTML += '<p>This is a new paragraph.</p>';
+    document.getElementById('myDiv').innerHTML += '<p>This is another paragraph.</p>';
+    //This is wrong, because the second line will overwrite the previous innerHTML
+    document.getElementById("myDiv").innerHTML = "<p>This is a new paragraph.</p>";
+  </script>
+</body>
+</html>
